@@ -22,8 +22,8 @@ class Generator():
             "X2": X[:, 1],
             "y": y
         })
-        X = torch.from_numpy(X).type(torch.float).to(self.device)
-        y = torch.from_numpy(y).type(torch.float).to(self.device)
+        X = torch.from_numpy(X).type(torch.float32).to(self.device)
+        y = torch.from_numpy(y).type(torch.int64).to(self.device)
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=RANDOM_SEED)
         return X_train, X_test, y_train, y_test
