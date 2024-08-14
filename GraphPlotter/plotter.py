@@ -10,6 +10,7 @@ class Plotter():
     def plot_scatter(self, X, y):
         plt.figure(figsize=(10, 7))
         plt.scatter(X[:, 0], X[:, 1], c=y)
+        plt.savefig('scatter.png', format="png")
         plt.show()
 
     def plot_decision_boundary(self, model, x_train, y_train, x_test, y_test):
@@ -29,6 +30,7 @@ class Plotter():
         plt.subplot(1, 2, 2)
         plt.title("Test")
         plot_decision_boundary(model, x_test, y_test)
+        plt.savefig('decision_boundary.png', format="png")
         plt.show()
 
 
@@ -40,4 +42,5 @@ class Plotter():
         plt.legend()
         plt.xlabel("epochs")
         plt.ylabel("loss")
+        plt.savefig("test and train loss.png", format="png")
         plt.show()
